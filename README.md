@@ -29,13 +29,13 @@
 
 ## 👥 Thành viên Đội FOREST SENTINEL
 
-| STT | Họ và tên           | Vai trò chính                          | Trách nhiệm chính                  |
-|-----|---------------------|----------------------------------------|------------------------------------|
-| 1   | Nguyễn Bá Toàn      | Team Leader                            | Quản lý dự án, Phần cứng, LoRa     |
-| 2   | [Tên TV 2]          | Dataset & Machine Learning             | Thu thập & Xử lý dữ liệu           |
-| 3   | [Tên TV 3]          | Edge AI & Model Optimization           | Xây dựng mô hình, Triển khai Edge  |
-| 4   | [Tên TV 4]          | Embedded System & Firmware             | Code ESP32, Hệ thống nhúng         |
-| 5   | [Tên TV 5]          | System Integration & Testing           | Gateway, Dashboard, Testing        |
+| STT | Họ và tên           | Vai trò chính                          | Trách nhiệm chính                                              |
+|-----|---------------------|----------------------------------------|----------------------------------------------------------------|
+| 1   | Nguyễn Bá Toàn      | Team Leader & Machine Learning         | Quản lý dự án, Xây dựng mô hình AI, Triển khai trên Edge       |
+| 2   | Vũ Thành Danh       | Dataset & Machine Learning             | Thu thập & Tiền xử lý dữ liệu, Hỗ trợ Toàn training mô hình AI |
+| 3   | Lê Văn Tấn Đạt      | LoRa                                   | Xây dựng Gateway, LoRa                                         |
+| 4   | Vũ Hải Thiện        | Embedded System & Firmware             | Code ESP32, Hệ thống nhúng                                     |
+| 5   | Nguyễn Trung Hậu    | System Integration & Testing           | Dashboard, Testing                                             |
 
 ---
 
@@ -69,7 +69,7 @@
 ## 📁 Cấu trúc Repository
 
 ```bash
-forest-sentinel-aiot/
+forest-sentinel/
 ├── data/
 │   ├── raw/                 # Dữ liệu âm thanh thô
 │   ├── processed/           # Dữ liệu sau tiền xử lý
