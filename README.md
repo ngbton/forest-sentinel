@@ -68,33 +68,6 @@
 
 ## 📁 Cấu trúc Repository
 
-#```bash
-forest-sentinel/
-├── data/
-│   ├── raw/                 # Dữ liệu âm thanh thô
-│   ├── processed/           # Dữ liệu sau tiền xử lý
-│   ├── augmented/           # Dữ liệu sau augmentation
-│   └── metadata.csv         # File nhãn và thông tin
-├── notebooks/               # Jupyter notebooks phân tích dữ liệu
-├── scripts/
-│   ├── download/            # Script tải dataset
-│   ├── preprocess/          # Lọc nhiễu, chuẩn hóa
-│   ├── augmentation/        # Tăng cường dữ liệu
-│   └── utils/               # Công cụ hỗ trợ
-├── src/
-│   ├── edge/                # Code chạy trên ESP32
-│   ├── gateway/             # Code cho Gateway
-│   └── dashboard/           # Web dashboard quản lý
-├── hardware/
-│   ├── schematics/          # Sơ đồ mạch
-│   └── enclosure/           # Thiết kế vỏ
-├── docs/
-│   ├── proposal.pdf         # Đề xuất ý tưởng
-│   ├── report/              # Báo cáo
-│   └── images/              # Hình ảnh minh họa
-├── requirements.txt
-├── .gitignore
-└── README.md
 # Kiến trúc Thư mục Dự án (Project Architecture)
 
 ```bash
