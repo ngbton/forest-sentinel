@@ -68,7 +68,7 @@
 
 ## 📁 Cấu trúc Repository
 
-```bash
+#```bash
 forest-sentinel/
 ├── data/
 │   ├── raw/                 # Dữ liệu âm thanh thô
@@ -95,3 +95,42 @@ forest-sentinel/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+# Kiến trúc Thư mục Dự án (Project Architecture)
+
+```bash
+forest-sentinel/
+├── data/
+│   ├── raw/                  # Dữ liệu âm thanh thô (.wav, .mp3 từ thực địa/dataset)
+│   ├── processed/            # Dữ liệu sau tiền xử lý (đã cắt lọc nhiễu, chuyển thành Spectrogram)
+│   ├── augmented/            # Dữ liệu sau khi tăng cường (thêm nhiễu trắng, thay đổi tốc độ)
+│   └── metadata.csv          # File CSV lưu nhãn (label), đường dẫn file và thông tin dataset
+├── models/                   # LƯU TRỮ VÀ QUẢN LÝ MÔ HÌNH AI
+│   ├── checkpoints/          # Các điểm lưu trọng số tốt nhất trong quá trình training
+│   └── exported/             # File mô hình đã xuất định dạng (.tflite, .onnx, .h5)
+├── notebooks/                # Jupyter notebooks dùng để EDA, phân tích tín hiệu và thử nghiệm model
+├── scripts/                  # CÁC SCRIPT PYTHON THỰC THI TÁC VỤ
+│   ├── download/             # Script tự động tải và giải nén dataset từ nguồn mở
+│   ├── preprocess/           # Script lọc nhiễu, chuẩn hóa tín hiệu, trích xuất đặc trưng (MFCC)
+│   ├── augmentation/          # Script tăng cường dữ liệu âm thanh tự động
+│   └── utils/                # Các hàm bổ trợ (đọc file, ghi log, định dạng cấu trúc dữ liệu)
+├── src/                      # MÃ NGUỒN CHÍNH CỦA HỆ THỐNG
+│   ├── edge/                 # Firmware chạy trên thiết bị đầu cuối (ESP32)
+│   │   ├── include/          # File header định nghĩa chân pin, thông số kết nối Wi-Fi/LoRa
+│   │   ├── lib/              # Driver điều khiển linh kiện (Microphone I2S, Module RF)
+│   │   ├── model/            # File mô hình TinyML dạng mảng C++ (model_data.h)
+│   │   └── src/              # Mã nguồn thực thi chính (main.cpp)
+│   ├── gateway/              # Code xử lý cho Trạm trung chuyển dữ liệu (Gateway)
+│   └── dashboard/            # Mã nguồn giao diện quản lý, giám sát trực quan (Web Dashboard)
+├── hardware/                 # PHẦN CỨNG THIẾT BỊ
+│   ├── schematics/           # Sơ đồ nguyên lý mạch điện (Altium, Proteus, KiCad)
+│   └── enclosure/            # File thiết kế cơ khí 3D cho vỏ hộp bảo vệ (STL, STEP)
+├── docs/                     # TÀI LIỆU DỰ ÁN
+│   ├── proposal.pdf          # Đề xuất ý tưởng dự án ban đầu
+│   ├── report/               # Nội dung báo cáo tiến độ, báo cáo đồ án
+│   └── images/               # Hình ảnh sơ đồ khối, ảnh thực tế minh họa
+├── tests/                    # Thư mục chứa các kịch bản kiểm thử tự động (Unit Test)
+├── .env.example              # File cấu hình mẫu chứa các biến môi trường trống (MQTT, DB)
+├── docker-compose.yml        # Kịch bản khởi chạy nhanh hạ tầng Gateway/Dashboard (MQTT Broker, DB)
+├── requirements.txt          # Các thư viện Python cần thiết phục vụ cho dự án
+├── .gitignore                # Khai báo các file và thư mục rác/nặng Git cần bỏ qua
+└── README.md                 # Tài liệu hướng dẫn cài đặt và vận hành tổng quan dự án
